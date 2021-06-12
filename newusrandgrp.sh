@@ -25,3 +25,6 @@ read USER
 id $USER &> /dev/null
 done
 sudo useradd -g $GROUPNAME $USER && echo "User has been successfully created with previously created group as its primary"
+
+echo "Please enter a password for your new user:"
+sudo passwd $USER
