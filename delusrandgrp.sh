@@ -2,12 +2,12 @@
 
 echo -n "Please enter the name of the username that you want to delete:"
 read USERDEL
-sudo userdel $USERDEL &> /dev/null && echo "User successfully deleted"
+sudo userdel -r $USERDEL &> /dev/null && echo "User successfully deleted"
 while [ "0" != "$?" ]
 do
 echo "This user does not exist, please enter a valid user:"
 read USERDEL
-sudo userdel $USERDEL &> /dev/null && echo "User successfully deleted"
+sudo userdel -r $USERDEL &> /dev/null && echo "User successfully deleted"
 done
 
 echo -n "Please enter the name of the group that you want to delete:"
