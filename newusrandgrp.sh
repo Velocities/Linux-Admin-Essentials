@@ -24,7 +24,7 @@ echo -n "This user already exists, please make a new entry:"
 read USER
 id $USER &> /dev/null
 done
-sudo useradd -g $GROUPNAME $USER && echo "User has been successfully created with previously created group as its primary"
+sudo useradd -m -s /bin/bash -k /etc/skel -g $GROUPNAME $USER && echo "User has been successfully created with previously created group as its primary"
 
 echo "Please enter a password for your new user:"
 sudo passwd $USER
