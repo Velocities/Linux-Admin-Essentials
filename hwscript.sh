@@ -2,6 +2,8 @@
 
 #Addresses the user#
 echo "Hello $USERNAME"
+#Lists the Linux Distribution and version#
+echo -n "You are on "; cat /etc/os-release | grep -w PRETTY_NAME | cut -d= -f2 | cut -d\" -f2 | cut -d\" -f1
 #Lists CPU/processor name#
 echo -n "Processor:"; lscpu | grep 'Model name' | cut -d: -f2
 #Lists RAM usage, total space, and usable space#
@@ -19,4 +21,4 @@ echo -n "Default Gateway:"; ip route | grep 'default via' | awk '{print $3}'
 echo -n "IPv4 Address:"; ip addr | grep "scope" | grep -vw "lo" | grep -v "host" | grep -w 'inet' | awk '{print $2}' | cut -d/ -f1
 echo -n "IPv6 Address:"; ip addr | grep "scope" | grep -vw "lo" | grep -v "host" | grep -w 'inet6' | awk '{print $2}' | cut -d/ -f1
 #Acknowledges the completion of the script#
-echo "Looking good!"
+echo "Script Complete"
