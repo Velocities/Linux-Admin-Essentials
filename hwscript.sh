@@ -3,7 +3,7 @@
 #Addresses the user#
 echo "Hello $USERNAME"
 #Lists the Linux Distribution and version#
-echo -n "You are on "; cat /etc/os-release | grep -w PRETTY_NAME | cut -d= -f2 | cut -d\" -f2 | cut -d\" -f1
+echo -n "Operating System: "; cat /etc/os-release | grep -w PRETTY_NAME | cut -d= -f2 | cut -d\" -f2 | cut -d\" -f1
 #Lists CPU/processor name#
 echo -n "Processor:"; lscpu | grep 'Model name' | cut -d: -f2
 #Lists RAM usage, total space, and usable space#
