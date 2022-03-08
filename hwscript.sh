@@ -16,7 +16,7 @@ echo -n "Graphics:"; lspci | grep -i vga | cut -d: -f3
 echo "Loopback adapter test results:"; ping -c4 127.0.0.1 | tail -2
 echo "Internet connection test results:"; ping -c4 1.1.1.1 | tail -2
 #Lists default gateway/router#
-echo -n "Default Gateway:"; ip route | grep 'default via' | awk '{print $3}'
+echo -n "Default Gateway:"; ip r | grep 'default via' | awk '{print $3}'
 #Lists the PC's IPv4 and IPv6 address#
 echo -n "IPv4 Address:"; ip addr | grep "scope" | grep -vw "lo" | grep -v "host" | grep -w 'inet' | awk '{print $2}' | cut -d/ -f1
 echo -n "IPv6 Address:"; ip addr | grep "scope" | grep -vw "lo" | grep -v "host" | grep -w 'inet6' | awk '{print $2}' | cut -d/ -f1
