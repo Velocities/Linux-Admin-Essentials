@@ -12,7 +12,7 @@ echo -n "Memory:"; free -th | head -2 | cut -d: -f2
 echo -n "Storage:"; lsblk | grep 'disk' | awk '{print $1" "$4}'
 #Lists video/graphics cards information#
 echo -n "Graphics:"; lspci | grep -i vga | cut -d: -f3
-#Tests functionality of the Network Card/NIC and then the connection to the network#
+#Tests functionality of TCP/IP and then the connection to the network#
 echo "Loopback adapter test results:"; ping -c4 127.0.0.1 | tail -2
 echo "Internet connection test results:"; ping -c4 1.1.1.1 | tail -2
 #Lists default gateway/router#
